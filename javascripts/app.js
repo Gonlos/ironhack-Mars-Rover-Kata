@@ -5,6 +5,7 @@ var rover = {
   direction : 0,
   x : 0,
   y : 0,
+  travelLog: [],
   turnLeft : function () {
     prevDirection=this.direction
     if(this.direction==0){
@@ -41,6 +42,7 @@ var rover = {
         console.log("invalid direction")
         break;
     }
+    this.travelLog.push([prevX,prevY])
     console.log("Move from ["+prevX+","+prevY+"] to ["+this.x+","+this.y+"] position")
   },
   listCommand: function (list) {
@@ -60,6 +62,7 @@ var rover = {
           break;
       }
     }
+    console.log("Travel log: ["+this.travelLog.join("], [")+"]")
   }
 }
 // ======================
