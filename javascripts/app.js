@@ -27,16 +27,36 @@ var rover = {
     prevY=this.y
     switch (directions[this.direction]) {
       case "N":
-        this.y--
+        if(this.y==0){
+          console.log("WARNIN!! North limit")
+          return
+        }else{
+          this.y--
+        }
         break;
       case "E":
-        this.x++
+        if(this.x==9){
+          console.log("WARNIN!! East limit")
+          return
+        }else{
+          this.x++
+        }
         break;
       case "S":
-        this.y++
+        if(this.y==9){
+          console.log("WARNIN!! South limit")
+          return
+        }else{
+          this.y++
+        }
         break;
       case "W":
-        this.x--
+        if(this.x==0){
+          console.log("WARNIN!! West limit")
+          return
+        }else{
+          this.x--
+        }
         break;
       default:
         console.log("invalid direction")
