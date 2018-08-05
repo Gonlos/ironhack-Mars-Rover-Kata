@@ -42,22 +42,42 @@ var rover = {
         break;
     }
     console.log("Move from ["+prevX+","+prevY+"] to ["+this.x+","+this.y+"] position")
+  },
+  listCommand: function (list) {
+    for (i = 0; i < list.length; i++) {
+      switch (list[i]) {
+        case "r":
+          this.turnRight()
+          break;
+        case "l":
+          this.turnLeft()
+          break;
+        case "f":
+          this.moveForward()
+          break;
+        default:
+          console.log(this.name + " - invalid Command")
+          break;
+      }
+    }
   }
 }
 // ======================
 function turnLeft(rover){
-  //console.log("turnLeft was called!");
   rover.turnLeft()
 }
 
 function turnRight(rover){
-  //console.log("turnRight was called!");
   rover.turnRight()
 }
 
 function moveForward(rover){
-  //console.log("moveForward was called")
   rover.moveForward(rover)
+}
+
+function listCommand(rover, list) {
+  console.log("List command")
+  rover.listCommand(list)
 }
 
 //test
@@ -73,3 +93,4 @@ turnRight(rover)
 moveForward(rover)
 turnRight(rover)
 moveForward(rover)
+listCommand(rover,"rffrfflfrff")
