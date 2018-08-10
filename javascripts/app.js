@@ -1,4 +1,4 @@
-//  Para facilitar el cambio de direccion sumando y restando 
+//  Para facilitar el cambio de direccion sumando y restando
 //  y la direccion del movimiento cambiando de variable
 const directions = ["N","E","S","W"]
 const directionsBack = ["S", "W", "N", "E"];
@@ -177,6 +177,10 @@ function turnRight(rover){
 
 function moveForward(rover){
   rover.moveForward()
+}
+
+function moveBackward(rover){
+  rover.moveBackward()
 }
 
 function listCommand(rover, list) {
